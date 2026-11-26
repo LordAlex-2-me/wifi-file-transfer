@@ -1,0 +1,14 @@
+{
+  "name": "wifi-file-transfer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Transfer files between devices on the same Wi-Fi network.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

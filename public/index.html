@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7fb">
+    <meta name="description" content="Move files privately between devices on the same Wi-Fi network.">
+    <title>Nearby — Wi-Fi File Transfer</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Nearby home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32"><path d="M5 11.5a16.1 16.1 0 0 1 22 0M9.3 16a9.9 9.9 0 0 1 13.4 0M13.5 20.5a3.7 3.7 0 0 1 5 0M16 25h.01"/></svg>
+          </span>
+          <span>nearby<span class="brand-period">.</span></span>
+        </a>
+        <span class="local-badge"><span></span> PRIVATE &amp; LOCAL</span>
+      </header>
+
+      <section class="hero">
+        <div class="eyebrow"><span class="eyebrow-line"></span> YOUR DEVICES, CONNECTED</div>
+        <h1>Files, meet <span>there.</span></h1>
+        <p>Send anything between devices on the same Wi-Fi. No accounts, no cloud, no fuss.</p>
+        <div class="connection-card">
+          <div class="connection-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 16v4h14v-4"/></svg>
+          </div>
+          <div class="connection-copy">
+            <strong>Open this address on your other device</strong>
+            <span id="connection-address">Finding your local address…</span>
+          </div>
+          <button class="copy-button" id="copy-address" type="button" aria-label="Copy address">Copy</button>
+        </div>
+      </section>
+
+      <section class="transfer-panel" aria-label="File transfers">
+        <div class="panel-header">
+          <div>
+            <div class="section-kicker">TRANSFER</div>
+            <h2>Drop it like it’s yours.</h2>
+          </div>
+          <span class="device-chip"><span class="device-dot"></span> Same network</span>
+        </div>
+
+        <button class="dropzone" id="dropzone" type="button">
+          <input id="file-picker" type="file" multiple hidden>
+          <span class="upload-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 16V4m-5 5 5-5 5 5M4 16v4h16v-4"/></svg>
+          </span>
+          <span class="drop-title">Drop files here to send</span>
+          <span class="drop-subtitle">or <span>browse your device</span> · any file, any size</span>
+        </button>
+
+        <div class="transfer-status" id="transfer-status" aria-live="polite"></div>
+        <div class="progress-list" id="progress-list"></div>
+
+        <div class="files-heading">
+          <div>
+            <div class="section-kicker">SHARED ON THIS NETWORK</div>
+            <h2>Ready to pick up <span id="file-count" class="count-pill">0</span></h2>
+          </div>
+          <button class="refresh-button" id="refresh-files" type="button" aria-label="Refresh file list">
+            <svg viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5m-4.1-2A7.5 7.5 0 0 1 18 7l2 5M4 12l2 5a7.5 7.5 0 0 0 13.1-3"/></svg>
+          </button>
+        </div>
+        <div class="file-list" id="file-list">
+          <div class="empty-state">
+            <span class="empty-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 7.5A1.5 1.5 0 0 1 5.5 6H10l2 2h6.5A1.5 1.5 0 0 1 20 9.5v8a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 17.5z"/></svg>
+            </span>
+            <strong>No files yet</strong>
+            <span>Files sent from either device will show up here.</span>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <span>Made for the moments you just need to move a file.</span>
+        <span class="footer-lock"><svg viewBox="0 0 16 16"><path d="M4.5 7V5a3.5 3.5 0 1 1 7 0v2m-8 0h9v7h-9z"/></svg> Stays on your network</span>
+      </footer>
+    </main>
+  </body>
+</html>
